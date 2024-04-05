@@ -7,9 +7,9 @@ from globals import token, filepath, channel_id
 from mountain import Mountain, MountainList
 
 # globals.py file hides below data, not contained in this repository
-FILEPATH: str = filepath
-BOT_TOKEN: str = token
-CHANNEL_ID: int = channel_id
+FILEPATH: str = filepath  # filepath to the json list of mountain data
+BOT_TOKEN: str = token  # discord bot secret token
+CHANNEL_ID: int = channel_id  # id of the channel this bot operates in
 
 
 @slash_command(name="mountains", description="view list of mountains")
