@@ -2,6 +2,7 @@ from interactions import Client, Intents, OptionType, slash_command, SlashContex
 
 from utils.file import load_mountains_from_json, save_mountains_to_json
 from utils.string import sanitise_string
+from utils.gear import gear_message
 from globals import token, filepath, channel_id
 from mountain import Mountain, MountainList
 
@@ -25,6 +26,18 @@ async def mountains(ctx: SlashContext) -> None:
     await _message.pin()
 
     await ctx.channel.purge(predicate=lambda m: m.author.id == ctx.channel.bots[0].id and m.pinned is False)
+
+    return
+
+
+@slash_command(name="gear", description="get list of recommended gear")
+async def gear(ctx: SlashContext) -> None:
+    if ctx.channel.id != CHANNEL_ID:
+        await ctx.send(content="Cannot be used in this channel! :(", ephemeral=True)
+        return
+
+    _message = await ctx.send(gear_message)
+    await _message.pin()
 
     return
 
