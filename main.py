@@ -39,6 +39,8 @@ async def gear(ctx: SlashContext) -> None:
     _message = await ctx.send(gear_message)
     await _message.pin()
 
+    await ctx.channel.purge(predicate=lambda m: m.author.id == ctx.channel.bots[0].id and m.pinned is False)
+
     return
 
 

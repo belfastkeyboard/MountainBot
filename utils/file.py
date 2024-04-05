@@ -19,13 +19,14 @@ def serialise_mountain_list(saved_mtns: dict) -> dict:
 
 
 def load_mountains_from_json(path: str) -> MountainList:
-    with open(path, 'r') as f:
-        try:
-            file: dict = json.load(f)
-        except json.decoder.JSONDecodeError:
-            file: dict = {}
-        except FileNotFoundError:
-            file: dict = {}
+    try:
+        with open(path, 'r') as f:
+            try:
+                file: dict = json.load(f)
+            except json.decoder.JSONDecodeError:
+                file: dict = {}
+    except FileNotFoundError:
+        file: dict = {}
 
     if not file.get("mountains"):
         saved_mtns: dict = {}
