@@ -24,6 +24,8 @@ def load_mountains_from_json(path: str) -> MountainList:
             file: dict = json.load(f)
         except json.decoder.JSONDecodeError:
             file: dict = {}
+        except FileNotFoundError:
+            file: dict = {}
 
     if not file.get("mountains"):
         saved_mtns: dict = {}
