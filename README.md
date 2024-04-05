@@ -1,2 +1,2 @@
 # MountainBot
-Discord bot for hiking
+Discord Bot for managing hiking trips
