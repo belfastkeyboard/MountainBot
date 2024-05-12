@@ -1,6 +1,15 @@
 # MountainBot
 Discord Bot for managing hiking trips
 
+
+# Creating the Bot account and giving it permissions
+Follow the guide [here](https://discordpy.readthedocs.io/en/stable/discord.html):
+
+Then, when granting permissions, make sure you grant the following:  
+
+![](./pics/scopes.png)
+![](./pics/app_permissions.png)
+
 # Run
 
 Clone the repo
