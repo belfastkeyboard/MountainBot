@@ -1,15 +1,6 @@
 # MountainBot
 Discord Bot for managing hiking trips
 
-
-# Creating the Bot account and giving it permissions
-Follow the guide [here](https://discordpy.readthedocs.io/en/stable/discord.html):
-
-Then, when granting permissions, make sure you grant the following:  
-
-![](./pics/scopes.png)
-![](./pics/app_permissions.png)
-
 # Run
 
 Clone the repo
@@ -32,5 +23,18 @@ Run GNU make
 make
 ```
 
+# Creating the Bot account and giving it permissions
+Follow the guide [here](https://discordpy.readthedocs.io/en/stable/discord.html):
 
-If you created globals.py directly the bot is now running!
+Required permissions:
+
+- view channels
+- send messages
+- manage messages
+- use application commands
+- create events (may not be required)
+- manage events (may not be required)
+
+Required from OAuth URL Generator:
+- tick 'bot'
+- tick 'applications.commands'
