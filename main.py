@@ -1,9 +1,19 @@
+from sys import exit
 from interactions import Client, Intents, OptionType, slash_command, SlashContext, slash_option
 
 from utils.file import load_mountains_from_json, save_mountains_to_json
 from utils.string import sanitise_string
 from utils.gear import gear_message
-from globals import token, filepath, channel_id
+try:
+    from globals import token, filepath, channel_id
+except ImportError:
+    print("""
+    --------------------------------------------------------------------------------------------------------
+    ERROR globals.py not found, please create globals.py and define the variables: filepath, token and channel_id
+    --------------------------------------------------------------------------------------------------------
+          """)
+    exit(1)
+
 from mountain import Mountain, MountainList
 
 # globals.py file hides below data, not contained in this repository
